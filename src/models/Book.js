@@ -1,38 +1,37 @@
-const e = require('express');
 const mongoose=require('mongoose');
 
-const bookSchema=new mongoose.Schema({
+const bookSchema={
     title:{
         type:String,
         required:true
     },
     author:{
         type:String,
-        required:true   
+        required:true
     },
     publishedYear:{
-        type:Number,
-        required:true   
+        type:String,
+        required:true
     },
     price:{
         type:Number,
-        required:true   
+        required:true
     },
     quantity:{
         type:Number,
-        required:true   
+        required:true
     },
     status:{
         type:String,
-        required:true,  
-        enum:['available','unavailable'],
-        default:'available' 
+        required:true,
+        enum:["Available","Not Available"],
+        default:"Available"
     },
     createdAt:{
         type:Date,
         default:Date.now
     }
-});
+};
 
-const Book=new mongoose.model('Book',bookSchema);
+const Book= new mongoose.model("Book",bookSchema);
 module.exports=Book;

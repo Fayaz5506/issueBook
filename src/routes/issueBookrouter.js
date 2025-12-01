@@ -1,9 +1,9 @@
-const express = require('express');
-const {issueBook, returnBook} = require('../controller/issueBookController');
+const express=require('express');
+const {issueBook,returnBook}=require('../controllers/issueBookController');
 
-const router = express.Router();
+const router=express.Router();
 
-router.post('/issue', issueBook);
-router.post('/return', returnBook);
+router.post('/',issueBook);
+router.put('/:id',returnBook);
 
-module.exports = router;
+module.exports=router;
